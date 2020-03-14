@@ -28,6 +28,4 @@ RUN \
     git clone https://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update; \
     pyenv update; \
     # Pipenv
-    echo 'eval "$(pipenv --completion)"' >> ~/.bash_profile; \
-
-  
+    echo 'eval "$(pipenv --completion)"' >> ~/.bash_profile
