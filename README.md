@@ -20,7 +20,7 @@ docker run --name coder \
     -e PASSWORD=mypassword \
     -p 80:8080 \
     -p 443:8080 \
-codercom/code-server --cert
+saracen9/coder --cert
 ```
 
 ## References
