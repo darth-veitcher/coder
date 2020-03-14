@@ -1,4 +1,5 @@
 FROM codercom/code-server
+USER root
 RUN \
 # Install packages
     apt-get update; \
