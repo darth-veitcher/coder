@@ -23,6 +23,17 @@ docker run --name coder \
 saracen9/coder --cert
 ```
 
+## Roadmap
+These are features I'd like to have but haven't yet implemented.
+
+* [ ] Language support
+  * [ ] Python 3
+  * [ ] Go
+  * [ ] React
+  * [ ] ReactNative
+* [ ] Enable ability to use docker from within the IDE for builds
+* [ ] Install appropriate extensions for VS Code
+
 ## References
 * [cdr/code-server](https://github.com/cdr/code-server)
 * [How to host VS Code on a vps using Code-server](https://medium.com/@edwinbrowwn/how-to-host-vs-code-on-a-vps-using-coder-aka-code-server-d519767fb52c)

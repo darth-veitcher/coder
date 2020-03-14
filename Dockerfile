@@ -13,7 +13,9 @@ RUN \
         python3 \
         python3-dev \
         python3-pip \
-        pipenv
+    ; \
+    # pipenv
+    curl https://raw.githubusercontent.com/kennethreitz/pipenv/master/get-pipenv.py | python3
 # Setup environment
 USER coder
 RUN \
