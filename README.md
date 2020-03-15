@@ -46,6 +46,7 @@ These are features I'd like to have but haven't yet implemented.
   * [ ] ReactNative
 * [x] Enable ability to use docker from within the IDE for builds
 * [ ] Install appropriate extensions for VS Code
+* [ ] Set global git `user.email` and `user.name` from environment
 
 ## References
 * [cdr/code-server](https://github.com/cdr/code-server)

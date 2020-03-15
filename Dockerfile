@@ -10,6 +10,8 @@ RUN \
         libssl-dev \
         libffi-dev \
         git \
+    # optional useful
+        nano \
     # python3
         python3 \
         python3-dev \
@@ -24,7 +26,7 @@ RUN \
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv; \
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc; \
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc; \
-    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' | tee -a ~/.bashrc; \
+    bash -c "echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval \"\$(pyenv init -)\"\nfi' | tee -a ~/.bashrc"; \
     exec "$SHELL"; \
     git clone https://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update; \
     pyenv update; \
@@ -32,4 +34,6 @@ RUN \
     pyenv install $PYENV_PYTHON; \
     pyenv global $PYENV_PYTHON; \
     # Pipenv
-    echo 'eval "$(pipenv --completion)"' >> ~/.bash_profile
+    echo 'eval "$(pipenv --completion)"' >> ~/.bash_profile; \
+    # Ensure can access docker without needing sudo
+    echo 'sudo chown coder:coder /var/run/docker.sock' >> ~/.bash_profile
