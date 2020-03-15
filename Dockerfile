@@ -1,3 +1,4 @@
+ARG PYTHON_MAJOR_VERSION=3
 FROM codercom/code-server
 USER root
 RUN \
@@ -27,5 +28,8 @@ RUN \
     exec "$SHELL"; \
     git clone https://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update; \
     pyenv update; \
+    export PYENV_PYTHON=$(pyenv install --list | grep -Eo '^\s${PYTHON_MAJOR_VERSION}\.[0-9]*\.[0-9]*$' | sort -hr | head -n 1); \
+    pyenv install $PYENV_PYTHON; \
+    pyenv global $PYENV_PYTHON; \
     # Pipenv
     echo 'eval "$(pipenv --completion)"' >> ~/.bash_profile
