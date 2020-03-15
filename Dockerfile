@@ -35,5 +35,7 @@ RUN \
     pyenv global $PYENV_PYTHON; \
     # Pipenv
     echo 'eval "$(pipenv --completion)"' >> ~/.bashrc; \
-    # Ensure can access docker without needing sudo
-    echo 'sudo chown coder:coder /var/run/docker.sock' >> ~/.rc
+    # Docker: Ensure can access docker without needing sudo
+    echo 'sudo chown coder:coder /var/run/docker.sock' >> ~/.bashrc; \
+    # Git: store credentials for ease (could use 'cache timeout=3600' for one hour)
+    git config --global credential.helper store
