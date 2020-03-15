@@ -34,6 +34,6 @@ RUN \
     pyenv install $PYENV_PYTHON; \
     pyenv global $PYENV_PYTHON; \
     # Pipenv
-    echo 'eval "$(pipenv --completion)"' >> ~/.bash_profile; \
+    echo 'eval "$(pipenv --completion)"' >> ~/.bashrc; \
     # Ensure can access docker without needing sudo
-    echo 'sudo chown coder:coder /var/run/docker.sock' >> ~/.bash_profile
+    echo 'sudo chown coder:coder /var/run/docker.sock' >> ~/.rc
